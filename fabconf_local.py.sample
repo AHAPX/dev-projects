@@ -1,0 +1,17 @@
+CONFIG = {
+    'dev': {
+        'host': 'dev@host',
+        'db': 'dbname',
+        'db_user': 'postgres',
+        'ext': 'sql',
+        'dump_path': '~/backups/',
+        'local_db': 'dbname',
+    },
+}
+
+
+def dev():
+    from fabfile import set_host
+
+    set_host('dev')
+
