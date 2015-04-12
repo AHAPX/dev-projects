@@ -1,0 +1,2 @@
+CUR_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+echo "export PATH=\$PATH:$CUR_DIR/scripts" >> ~/.bashrc

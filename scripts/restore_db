@@ -1,0 +1,5 @@
+#!/bin/bash
+
+psql -U postgres -c "drop database $1;"
+psql -U postgres -c "create database $1;"
+psql -U postgres $1 < $2

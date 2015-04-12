@@ -1,0 +1,5 @@
+CUR_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+NAMES=$( $CUR_DIR/get_git_names )
+if [ ! -z $NAMES ]; then
+    pep8 $NAMES --ignore=`cat $CUR_DIR/../conf/pep8.ignore`
+fi

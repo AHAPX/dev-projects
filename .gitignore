@@ -55,5 +55,5 @@ target/
 
 # config
 conf/
-.fabrc
+.*
 *_local.py
