@@ -19,7 +19,7 @@ def rename_last():
     db_name = '{}{}.sql'.format(dump_path, env.curconfig['db'])
     if os.path.exists(db_name):
         max_num = 0
-        for filename in filter(lambda a: a.startswith(db_name), os.listdir(dump_path)):
+        for filename in filter(lambda a: '{}{}'.format(dump_path, a).startswith(db_name), os.listdir(dump_path)):
             l = filename.split('.')
             try:
                 if len(l) == 3 and int(l[2]) > max_num:
