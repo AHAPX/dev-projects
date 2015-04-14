@@ -1,1 +1,8 @@
-git status -s | grep '\.py' | grep -v ' D' | awk '{print $2}'
+CUR_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+if [ -f $CUR_DIR/../conf/git.ignore ]; then
+    NAMES=$( git status -s | grep '\.py' | grep -v ' D' | awk '{print $2}' | grep -vf $CUR_DIR/../conf/git.ignore )
+fi
+if [ ! -f $CUR_DIR/../conf/git.ignore ]; then
+    NAMES=$( git status -s | grep '\.py' | grep -v ' D' | awk '{print $2}' )
+fi
+echo $NAMES

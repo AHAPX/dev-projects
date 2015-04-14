@@ -1,5 +1,5 @@
 CUR_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 NAMES=$( $CUR_DIR/get_git_names )
-if [ ! -z $NAMES ]; then
+if [ ! -z "$NAMES" ]; then
     pyflakes $NAMES
 fi
