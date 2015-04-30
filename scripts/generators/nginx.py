@@ -3,7 +3,7 @@ import os
 import argparse
 from os.path import expanduser
 
-CONF_PATH = '../conf/'
+CONF_PATH = '../../conf/'
 CONF_NGINX_PATH = os.path.join(CONF_PATH, 'nginx')
 
 parser = argparse.ArgumentParser()

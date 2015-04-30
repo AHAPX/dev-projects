@@ -49,6 +49,7 @@ def unarchive():
 
 
 def restore():
+    local('psql -U postgres -c "SELECT pid, (SELECT pg_terminate_backend(pid)) as killed from pg_stat_activity WHERE datname = \'{}\';"'.format(env.curconfig['local_db']))
     local('psql -U postgres -c "drop database {};"'.format(env.curconfig['local_db']))
     local('psql -U postgres -c "create database {};"'.format(env.curconfig['local_db']))
     local('psql -U postgres {} < {}{}.sql'.format(env.curconfig['local_db'], env.curconfig['dump_path'], env.curconfig['db']))
